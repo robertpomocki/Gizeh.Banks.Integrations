@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="urn:ca:std:cdc:tech:xsd:crds.008.001.02" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="urn:ca:std:cdc:tech:xsd:crds.008.001.02" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Document" type="Document" />
+  <xs:complexType name="Document">
+    <xs:sequence>
+      <xs:element name="ChngCrdLmtSts" type="ChangeCardLimitsStatus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ChangeCardLimitsStatus">
+    <xs:sequence>
+      <xs:element name="GrpHdr" type="GrpHdrType" />
+      <xs:element name="CrdSts" type="CrdStsType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CrdStsType">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="unbounded" name="StsInfo" type="StsInfoType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GrpHdrType">
+    <xs:sequence>
+      <xs:element name="MsgId" type="Max35Text" />
+      <xs:element name="CreDtTm" type="ISODateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="Max35Text">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="35" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ISODateTime">
+    <xs:restriction base="xs:dateTime" />
+  </xs:simpleType>
+  <xs:complexType name="StsInfoType">
+    <xs:sequence>
+      <xs:element name="CrdNo" type="Max16Text" />
+      <xs:element name="CrdId" type="Max20NumericText" />
+      <xs:element name="StsCode" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="StsCodeType">
+    <xs:sequence>
+      <xs:element name="SchCrit" type="UnlimitedText" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="UnlimitedText">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:simpleType name="Max20NumericText">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[0-9]{1,20}" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Max16Text">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="16" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

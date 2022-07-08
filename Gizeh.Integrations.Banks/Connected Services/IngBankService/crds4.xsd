@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="urn:ca:std:cdc:tech:xsd:crds.001.001.01" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="urn:ca:std:cdc:tech:xsd:crds.001.001.01" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Document" type="Document" />
+  <xs:complexType name="Document">
+    <xs:sequence>
+      <xs:element name="GetCrdLt" type="GetCardsListType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetCardsListType">
+    <xs:sequence>
+      <xs:element name="GrpHdr" type="GrpHdrType" />
+      <xs:element name="CardCrit" type="CardCritType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GrpHdrType">
+    <xs:sequence>
+      <xs:element name="MsgId" type="Max35Text" />
+      <xs:element name="CreDtTm" type="ISODateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="Max35Text">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="35" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ISODateTime">
+    <xs:restriction base="xs:dateTime" />
+  </xs:simpleType>
+  <xs:complexType name="CardCritType">
+    <xs:sequence>
+      <xs:element name="NewCrit" type="NewCritType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="NewCritType">
+    <xs:sequence>
+      <xs:element name="SchCrit" type="SchCritType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SchCritType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CardType" type="Max1Text" />
+      <xs:element minOccurs="0" name="IBAN" type="IBAN2007Identifier" />
+      <xs:element minOccurs="0" name="CardSts" type="Max2Text" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="Max2Text">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="2" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Max1Text">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="1" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="IBAN2007Identifier">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[A-Z]{2,2}[0-9]{2,2}[a-zA-Z0-9]{1,30}" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

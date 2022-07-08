@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:M30="urn:ca:std:cdc:tech:xsd:crds.001.001.01" xmlns:M9="urn:ca:std:ccs:ing:tech:xsd:rpts.005.001.01" xmlns:appContentRq="urn:ca:std:cdc:tech:xsd:appXmlContent.001.001.01" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:M42="urn:ca:std:cdc:tech:xsd:crds.002.001.02" xmlns:M41="urn:ca:std:cdc:tech:xsd:gbab.002.001.01" xmlns:M40="urn:ca:std:cdc:tech:xsd:gbab.001.001.01" xmlns:M15="urn:ca:std:ccs:ing:tech:xsd:ismo.001.001.01" xmlns:M14="urn:ca:std:ccs:ing:tech:xsd:ismi.001.001.01" xmlns:M13="urn:ca:std:ccs:ing:tech:xsd:rpts.014.001.01" xmlns:M12="urn:ca:std:ccs:ing:tech:xsd:rpts.013.001.01" xmlns:M11="urn:ca:std:ccs:ing:tech:xsd:rpts.012.001.01" xmlns:M10="urn:ca:std:ccs:ing:tech:xsd:rpts.011.001.01" xmlns:doccRsp="urn:ca:std:cdc:tech:xsd:docc.002.001.01" xmlns:M27="urn:ca:std:ccs:ing:tech:xsd:cmrq.003.001.01" xmlns:M26="urn:ca:std:ccs:tech:xsd:dies.001.001.01" xmlns:M37="urn:ca:std:cdc:tech:xsd:crds.004.001.01" xmlns:M36="urn:ca:std:cdc:tech:xsd:crds.003.001.01" xmlns:M35="urn:ca:std:cdc:tech:xsd:crds.008.001.02" xmlns:M34="urn:ca:std:cdc:tech:xsd:crds.007.001.02" xmlns:M33="urn:ca:std:cdc:tech:xsd:crds.006.001.01" xmlns:M32="urn:ca:std:cdc:tech:xsd:crds.005.001.01" xmlns:M31="urn:ca:std:cdc:tech:xsd:crds.002.001.01" xmlns:M4="urn:iso:std:iso:20022:tech:xsd:camt.053.001.01" xmlns:cwtwd="urn:ca:std:cdc:tech:xsd:cashWithdrawalTransferWithNominalSpec.001.001.01" xmlns:mns14="urn:iso:std:iso:20022:tech:xsd:pain.002.001.03" xmlns:M29="urn:ca:std:ccs:tech:xsd:rpts.005.001.02" xmlns:M28="urn:ca:std:ccs:tech:xsd:cmrq.004.001.01" xmlns:M39="urn:ca:std:cdc:tech:xsd:trco.002.001.01" xmlns:M38="urn:ca:std:cdc:tech:xsd:trco.001.001.01" xmlns:doccRq="urn:ca:std:cdc:tech:xsd:docc.001.001.01" xmlns:cdc="urn:ca:std:cdc:tech:xsd:ing.cdc.001.01" xmlns:M5="urn:iso:std:iso:20022:tech:xsd:camt.053.001.02" xmlns:M2="urn:iso:std:iso:20022:tech:xsd:camt.052.001.02" xmlns:appContentRsp="urn:ca:std:cdc:tech:xsd:appXmlContent.002.001.01" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="urn:ca:std:cdc:tech:xsd:ing.cdc.001.01" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/xmldsig-core-schema.xsd" namespace="http://www.w3.org/2000/09/xmldsig#" />
+  <xs:import schemaLocation="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/rpts.011.001.01.xsd" namespace="urn:ca:std:ccs:ing:tech:xsd:rpts.011.001.01" />
+  <xs:import schemaLocation="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/rpts.012.001.01.xsd" namespace="urn:ca:std:ccs:ing:tech:xsd:rpts.012.001.01" />
+  <xs:import schemaLocation="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/rpts.013.001.01.xsd" namespace="urn:ca:std:ccs:ing:tech:xsd:rpts.013.001.01" />
+  <xs:import schemaLocation="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/rpts.014.001.01.xsd" namespace="urn:ca:std:ccs:ing:tech:xsd:rpts.014.001.01" />
+  <xs:import schemaLocation="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/cmrq.003.001.01.xsd" namespace="urn:ca:std:ccs:ing:tech:xsd:cmrq.003.001.01" />
+  <xs:import schemaLocation="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/camt.053.001.01.xsd" namespace="urn:iso:std:iso:20022:tech:xsd:camt.053.001.01" />
+  <xs:import schemaLocation="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/dies.001.001.01.xsd" namespace="urn:ca:std:ccs:tech:xsd:dies.001.001.01" />
+  <xs:import schemaLocation="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/ismi.001.001.01.xsd" namespace="urn:ca:std:ccs:ing:tech:xsd:ismi.001.001.01" />
+  <xs:import schemaLocation="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/ismo.001.001.01.xsd" namespace="urn:ca:std:ccs:ing:tech:xsd:ismo.001.001.01" />
+  <xs:import schemaLocation="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/rpts.005.001.01.xsd" namespace="urn:ca:std:ccs:ing:tech:xsd:rpts.005.001.01" />
+  <xs:import schemaLocation="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/camt.052.001.02.xsd" namespace="urn:iso:std:iso:20022:tech:xsd:camt.052.001.02" />
+  <xs:import schemaLocation="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/pain.002.001.03.xsd" namespace="urn:iso:std:iso:20022:tech:xsd:pain.002.001.03" />
+  <xs:import schemaLocation="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/cmrq.004.001.01.xsd" namespace="urn:ca:std:ccs:tech:xsd:cmrq.004.001.01" />
+  <xs:import schemaLocation="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/rpts.005.001.02.xsd" namespace="urn:ca:std:ccs:tech:xsd:rpts.005.001.02" />
+  <xs:import schemaLocation="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/camt.053.001.02.xsd" namespace="urn:iso:std:iso:20022:tech:xsd:camt.053.001.02" />
+  <xs:import schemaLocation="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/crds.001.001.01.xsd" namespace="urn:ca:std:cdc:tech:xsd:crds.001.001.01" />
+  <xs:import schemaLocation="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/crds.002.001.01.xsd" namespace="urn:ca:std:cdc:tech:xsd:crds.002.001.01" />
+  <xs:import schemaLocation="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/crds.003.001.01.xsd" namespace="urn:ca:std:cdc:tech:xsd:crds.003.001.01" />
+  <xs:import schemaLocation="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/crds.004.001.01.xsd" namespace="urn:ca:std:cdc:tech:xsd:crds.004.001.01" />
+  <xs:import schemaLocation="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/crds.005.001.01.xsd" namespace="urn:ca:std:cdc:tech:xsd:crds.005.001.01" />
+  <xs:import schemaLocation="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/crds.006.001.01.xsd" namespace="urn:ca:std:cdc:tech:xsd:crds.006.001.01" />
+  <xs:import schemaLocation="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/crds.007.001.02.xsd" namespace="urn:ca:std:cdc:tech:xsd:crds.007.001.02" />
+  <xs:import schemaLocation="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/crds.008.001.02.xsd" namespace="urn:ca:std:cdc:tech:xsd:crds.008.001.02" />
+  <xs:import schemaLocation="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/trco.001.001.01.xsd" namespace="urn:ca:std:cdc:tech:xsd:trco.001.001.01" />
+  <xs:import schemaLocation="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/trco.002.001.01.xsd" namespace="urn:ca:std:cdc:tech:xsd:trco.002.001.01" />
+  <xs:import schemaLocation="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/gbab.001.001.01.xsd" namespace="urn:ca:std:cdc:tech:xsd:gbab.001.001.01" />
+  <xs:import schemaLocation="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/gbab.002.001.01.xsd" namespace="urn:ca:std:cdc:tech:xsd:gbab.002.001.01" />
+  <xs:import schemaLocation="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/docc.001.001.01.xsd" namespace="urn:ca:std:cdc:tech:xsd:docc.001.001.01" />
+  <xs:import schemaLocation="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/docc.002.001.01.xsd" namespace="urn:ca:std:cdc:tech:xsd:docc.002.001.01" />
+  <xs:import schemaLocation="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/appContent.001.001.01.xsd" namespace="urn:ca:std:cdc:tech:xsd:appXmlContent.001.001.01" />
+  <xs:import schemaLocation="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/appContent.002.001.01.xsd" namespace="urn:ca:std:cdc:tech:xsd:appXmlContent.002.001.01" />
+  <xs:import schemaLocation="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/cashWithdrawalTransferWithNominalSpec.001.001.01.xsd" namespace="urn:ca:std:cdc:tech:xsd:cashWithdrawalTransferWithNominalSpec.001.001.01" />
+  <xs:import schemaLocation="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/crds.002.001.02.xsd" namespace="urn:ca:std:cdc:tech:xsd:crds.002.001.02" />
+  <xs:element name="GetDDReport" type="cdc:GetDDReportRequestType" />
+  <xs:element name="GetDDReportResponse" type="cdc:GetDDReportResponseType" />
+  <xs:element name="GetMCReport" type="cdc:GetMCReportRequestType" />
+  <xs:element name="GetMCReportResponse" type="cdc:GetMCReportResponseType" />
+  <xs:element name="GetSwiftStatement" type="cdc:GetSwiftStatementRequestType" />
+  <xs:element name="GetSwiftStatementResponse" type="cdc:GetSwiftStatementResponseType" />
+  <xs:element name="ActivityFundDomestic" type="cdc:ActivityFundDomesticRequestType" />
+  <xs:element name="ActivityFundDomesticResponse" type="cdc:GetPaymentStatusReportResponseType" />
+  <xs:element name="ActivityFundForeign" type="cdc:ActivityFundForeignRequestType" />
+  <xs:element name="ActivityFundForeignResponse" type="cdc:GetPaymentStatusReportResponseType" />
+  <xs:element name="ImportSIMPMatchingInvoices" type="cdc:ImportSIMPMatchingInvoicesRequestType" />
+  <xs:element name="ImportSIMPMatchingInvoicesResponse" type="cdc:ImportSIMPMatchingInvoicesResponseType" />
+  <xs:element name="GetCardsList" type="cdc:GetCardsListRequestType" />
+  <xs:element name="GetCardsList2" type="cdc:GetCardsListRequestType" />
+  <xs:element name="GetCardsListResponse" type="cdc:GetCardsListResponseType" />
+  <xs:element name="GetCardsListResponse2" type="cdc:GetCardsListResponseType2" />
+  <xs:element name="GetCardReport" type="cdc:GetCardReportRequestType" />
+  <xs:element name="GetCardReportResponse" type="cdc:GetCardReportResponseType" />
+  <xs:element name="GetCardStatement" type="cdc:GetCardStatementRequestType" />
+  <xs:element name="GetCardStatementResponse" type="cdc:GetCardStatementResponseType" />
+  <xs:element name="ChangeCardLimits" type="cdc:ChangeCardLimitsRequestType" />
+  <xs:element name="ChangeCardLimitsResponse" type="cdc:ChangeCardLimitsResponseType" />
+  <xs:element name="GetCardLimits" type="cdc:GetCardLimitsRequestType" />
+  <xs:element name="GetCardLimitsResponse" type="cdc:GetCardLimitsResponseType" />
+  <xs:element name="GetTransferConfirmation" type="cdc:GetTransferConfirmationRequestType" />
+  <xs:element name="GetTransferConfirmationResponse" type="cdc:GetTransferConfirmationResponseType" />
+  <xs:element name="GetBatchAccountBalaces" type="cdc:GetBatchAccountBalacesRequestType" />
+  <xs:element name="GetBatchAccountBalacesResponse" type="cdc:GetBatchAccountBalacesResponseType" />
+  <xs:element name="DeactivateOrCloseCard" type="cdc:DeactivateOrCloseCardRequestType" />
+  <xs:element name="DeactivateOrCloseCardResponse" type="cdc:DeactivateOrCloseCardResponseType" />
+  <xs:element name="CashWithdrawalTransferWithNominals" type="cdc:CashWithdrawalTransferWithNominalsRequestType" />
+  <xs:element name="CashWithdrawalTransferWithNominalsResponse" type="cdc:GetPaymentStatusReportResponseType" />
+  <xs:element name="AppContentResponse" type="cdc:AppContentResponseType" />
+  <xs:element name="AppContentRequest" type="cdc:AppContentRequestType" />
+  <xs:complexType name="GetDDReportRequestType">
+    <xs:sequence>
+      <xs:element ref="M10:Document" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetDDReportResponseType">
+    <xs:choice>
+      <xs:element maxOccurs="unbounded" ref="M11:Document" />
+      <xs:element maxOccurs="unbounded" ref="M9:Document" />
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType name="GetMCReportRequestType">
+    <xs:sequence>
+      <xs:element ref="M12:Document" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetMCReportResponseType">
+    <xs:choice>
+      <xs:element ref="M13:Document" />
+      <xs:element ref="M9:Document" />
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType name="GetSwiftStatementRequestType">
+    <xs:sequence>
+      <xs:element ref="M27:Document" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetSwiftStatementResponseType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" ref="M2:Document" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" ref="M4:Document" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" ref="M9:Document" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ActivityFundDomesticRequestType">
+    <xs:sequence>
+      <xs:element ref="M26:SignedDocument" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ActivityFundForeignRequestType">
+    <xs:sequence>
+      <xs:element ref="M26:SignedDocument" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ImportSIMPMatchingInvoicesRequestType">
+    <xs:sequence>
+      <xs:element ref="M14:Document" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ImportSIMPMatchingInvoicesResponseType">
+    <xs:sequence>
+      <xs:element ref="M15:Document" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetPaymentStatusReportResponseType">
+    <xs:sequence>
+      <xs:element ref="mns14:Document" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetCardsListRequestType">
+    <xs:sequence>
+      <xs:element ref="M30:Document" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetCardsListResponseType">
+    <xs:sequence>
+      <xs:element ref="M31:Document" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetCardsListResponseType2">
+    <xs:sequence>
+      <xs:element ref="M42:Document" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetCardReportRequestType">
+    <xs:sequence>
+      <xs:element ref="M32:Document" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetCardReportResponseType">
+    <xs:sequence>
+      <xs:element ref="M33:Document" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetCardStatementRequestType">
+    <xs:sequence>
+      <xs:element ref="M28:Document" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetCardStatementResponseType">
+    <xs:sequence>
+      <xs:choice>
+        <xs:element ref="M5:Document" />
+        <xs:element ref="M29:Document" />
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ChangeCardLimitsRequestType">
+    <xs:sequence>
+      <xs:element ref="M34:Document" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ChangeCardLimitsResponseType">
+    <xs:sequence>
+      <xs:element ref="M35:Document" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetCardLimitsRequestType">
+    <xs:sequence>
+      <xs:element ref="M36:Document" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetCardLimitsResponseType">
+    <xs:sequence>
+      <xs:element ref="M37:Document" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetTransferConfirmationRequestType">
+    <xs:sequence>
+      <xs:element ref="M38:Document" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetTransferConfirmationResponseType">
+    <xs:sequence>
+      <xs:element ref="M39:Document" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetBatchAccountBalacesRequestType">
+    <xs:sequence>
+      <xs:element ref="M40:Document" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetBatchAccountBalacesResponseType">
+    <xs:sequence>
+      <xs:element ref="M41:Document" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DeactivateOrCloseCardRequestType">
+    <xs:sequence>
+      <xs:element ref="doccRq:Document" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DeactivateOrCloseCardResponseType">
+    <xs:sequence>
+      <xs:element ref="doccRsp:Document" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AppContentRequestType">
+    <xs:sequence>
+      <xs:element ref="appContentRq:Document" />
+      <xs:element minOccurs="0" ref="ds:Signature" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AppContentResponseType">
+    <xs:sequence>
+      <xs:element ref="appContentRsp:Document" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CashWithdrawalTransferWithNominalsRequestType">
+    <xs:sequence>
+      <xs:element ref="cwtwd:Document" />
+      <xs:element minOccurs="0" ref="ds:Signature" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

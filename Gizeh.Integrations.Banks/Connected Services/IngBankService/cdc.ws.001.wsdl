@@ -1,0 +1,819 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:cdc="urn:ca:std:cdc:tech:wsdl:cdc.ws.001.01" xmlns:serr1="urn:iso:std:iso:20022:tech:xsd:tsmt.016.001.03" xmlns:sing1="urn:ca:std:cdc:tech:xsd:ing.cdc.001.01" xmlns:shdr1="urn:ca:std:ccs:ing:tech:xsd:mhdr.001.001.01" xmlns:scdc1="urn:ca:std:cdc:tech:xsd:cdc.001.01" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="cdc.ws.001.01" targetNamespace="urn:ca:std:cdc:tech:wsdl:cdc.ws.001.01" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema xmlns="urn:ca:std:cdc:tech:wsdl:cdc.ws.001.01" targetNamespace="urn:ca:std:cdc:tech:wsdl:cdc.ws.001.01">
+      <xsd:import schemaLocation="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/cdc.001.01.xsd" namespace="urn:ca:std:cdc:tech:xsd:cdc.001.01" />
+      <xsd:import schemaLocation="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/tsmt.016.001.03.xsd" namespace="urn:iso:std:iso:20022:tech:xsd:tsmt.016.001.03" />
+      <xsd:import schemaLocation="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/mhdr.001.001.01.xsd" namespace="urn:ca:std:ccs:ing:tech:xsd:mhdr.001.001.01" />
+      <xsd:import schemaLocation="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/ing.cdc.001.01.xsd" namespace="urn:ca:std:cdc:tech:xsd:ing.cdc.001.01" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ImportTransfersInitiationResponse">
+    <wsdl:part name="ImportTransfersInitiationResponse" element="scdc1:ImportTransfersInitiationResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDocumentListResponse">
+    <wsdl:part name="GetDocumentListResponse" element="scdc1:GetDocumentListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTransferConfirmationResponse">
+    <wsdl:part name="GetTransferConfirmationResponse" element="sing1:GetTransferConfirmationResponse" />
+  </wsdl:message>
+  <wsdl:message name="MT101TransferResponse">
+    <wsdl:part name="MT101TransferResponse" element="scdc1:MT101TransferResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPaymentStatusReportRequest">
+    <wsdl:part name="GetPaymentStatusReportRequest" element="scdc1:GetPaymentStatusReport" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountReportRequest">
+    <wsdl:part name="GetAccountReportRequest" element="scdc1:GetAccountReport" />
+  </wsdl:message>
+  <wsdl:message name="GetCardLimitsRequest">
+    <wsdl:part name="GetCardLimitsRequest" element="sing1:GetCardLimits" />
+  </wsdl:message>
+  <wsdl:message name="GetCardsListRequest">
+    <wsdl:part name="GetCardsListRequest" element="sing1:GetCardsList" />
+  </wsdl:message>
+  <wsdl:message name="CashWithdrawalTransferResponse">
+    <wsdl:part name="CashWithdrawalTransferResponse" element="scdc1:CashWithdrawalTransferResponse" />
+  </wsdl:message>
+  <wsdl:message name="DirectDebitInitiationResponse">
+    <wsdl:part name="DirectDebitInitiationResponse" element="scdc1:DirectDebitInitiationResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCardStatementRequest">
+    <wsdl:part name="GetCardStatementRequest" element="sing1:GetCardStatement" />
+  </wsdl:message>
+  <wsdl:message name="GetCardLimitsResponse">
+    <wsdl:part name="GetCardLimitsResponse" element="sing1:GetCardLimitsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCardReportRequest">
+    <wsdl:part name="GetCardReportRequest" element="sing1:GetCardReport" />
+  </wsdl:message>
+  <wsdl:message name="ActivityFundDomesticRequest">
+    <wsdl:part name="ActivityFundDomesticRequest" element="sing1:ActivityFundDomestic" />
+  </wsdl:message>
+  <wsdl:message name="GetStatementRequest">
+    <wsdl:part name="GetStatementRequest" element="scdc1:GetStatement" />
+  </wsdl:message>
+  <wsdl:message name="GetCardsListRequest2">
+    <wsdl:part name="GetCardsListRequest2" element="sing1:GetCardsList2" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountBalanceRequest">
+    <wsdl:part name="GetAccountBalanceRequest" element="scdc1:GetAccountBalance" />
+  </wsdl:message>
+  <wsdl:message name="GetDocumentResponse">
+    <wsdl:part name="GetDocumentResponse" element="scdc1:GetDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSwiftStatementResponse">
+    <wsdl:part name="GetSwiftStatementResponse" element="sing1:GetSwiftStatementResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPaymentStatusReportResponse">
+    <wsdl:part name="GetPaymentStatusReportResponse" element="scdc1:GetPaymentStatusReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActivityFundForeignRequest">
+    <wsdl:part name="ActivityFundForeignRequest" element="sing1:ActivityFundForeign" />
+  </wsdl:message>
+  <wsdl:message name="AppContentRequest">
+    <wsdl:part name="AppContentRequest" element="sing1:AppContentRequest" />
+  </wsdl:message>
+  <wsdl:message name="ChangeCardLimitsResponse">
+    <wsdl:part name="ChangeCardLimitsResponse" element="sing1:ChangeCardLimitsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCardReportResponse">
+    <wsdl:part name="GetCardReportResponse" element="sing1:GetCardReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStatementResponse">
+    <wsdl:part name="GetStatementResponse" element="scdc1:GetStatementResponse" />
+  </wsdl:message>
+  <wsdl:message name="InternalTransferResponse">
+    <wsdl:part name="InternalTransferResponse" element="scdc1:InternalTransferResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBatchAccountBalacesRequest">
+    <wsdl:part name="GetBatchAccountBalacesRequest" element="sing1:GetBatchAccountBalaces" />
+  </wsdl:message>
+  <wsdl:message name="ErrorReport">
+    <wsdl:part name="ErrorReport" element="serr1:Document" />
+  </wsdl:message>
+  <wsdl:message name="CashWithdrawalTransferWithNominalsResponse">
+    <wsdl:part name="CashWithdrawalTransferWithNominalsResponse" element="sing1:CashWithdrawalTransferWithNominalsResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeactivateOrCloseCardRequest">
+    <wsdl:part name="DeactivateOrCloseCardRequest" element="sing1:DeactivateOrCloseCard" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountBalanceResponse">
+    <wsdl:part name="GetAccountBalanceResponse" element="scdc1:GetAccountBalanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetIncrementalAccountReportResponse">
+    <wsdl:part name="GetIncrementalAccountReportResponse" element="scdc1:GetIncrementalAccountReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="DomesticTransferRequest">
+    <wsdl:part name="DomesticTransferRequest" element="scdc1:DomesticTransfer" />
+  </wsdl:message>
+  <wsdl:message name="DeactivateOrCloseCardResponse">
+    <wsdl:part name="DeactivateOrCloseCardResponse" element="sing1:DeactivateOrCloseCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTransferConfirmationRequest">
+    <wsdl:part name="GetTransferConfirmationRequest" element="sing1:GetTransferConfirmation" />
+  </wsdl:message>
+  <wsdl:message name="GetDDReportRequest">
+    <wsdl:part name="GetDDReportRequest" element="sing1:GetDDReport" />
+  </wsdl:message>
+  <wsdl:message name="MT101TransferRequest">
+    <wsdl:part name="MT101TransferRequest" element="scdc1:MT101Transfer" />
+  </wsdl:message>
+  <wsdl:message name="PrepareReportResponse">
+    <wsdl:part name="PrepareReportResponse" element="scdc1:PrepareReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDocumentRequest">
+    <wsdl:part name="GetDocumentRequest" element="scdc1:GetDocument" />
+  </wsdl:message>
+  <wsdl:message name="ImportTransfersInitiationRequest">
+    <wsdl:part name="ImportTransfersInitiationRequest" element="scdc1:ImportTransfersInitiation" />
+  </wsdl:message>
+  <wsdl:message name="GetCardsListResponse2">
+    <wsdl:part name="GetCardsListResponse2" element="sing1:GetCardsListResponse2" />
+  </wsdl:message>
+  <wsdl:message name="AppContentResponse">
+    <wsdl:part name="AppContentResponse" element="sing1:AppContentResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMCReportResponse">
+    <wsdl:part name="GetMCReportResponse" element="sing1:GetMCReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="CashWithdrawalTransferWithNominalsRequest">
+    <wsdl:part name="CashWithdrawalTransferWithNominalsRequest" element="sing1:CashWithdrawalTransferWithNominals" />
+  </wsdl:message>
+  <wsdl:message name="ForeignTransferRequest">
+    <wsdl:part name="ForeignTransferRequest" element="scdc1:ForeignTransfer" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountReportResponse">
+    <wsdl:part name="GetAccountReportResponse" element="scdc1:GetAccountReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="InternalTransferRequest">
+    <wsdl:part name="InternalTransferRequest" element="scdc1:InternalTransfer" />
+  </wsdl:message>
+  <wsdl:message name="GetCardStatementResponse">
+    <wsdl:part name="GetCardStatementResponse" element="sing1:GetCardStatementResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetIncrementalAccountReportRequest">
+    <wsdl:part name="GetIncrementalAccountReportRequest" element="scdc1:GetIncrementalAccountReport" />
+  </wsdl:message>
+  <wsdl:message name="DirectDebitInitiationRequest">
+    <wsdl:part name="DirectDebitInitiationRequest" element="scdc1:DirectDebitInitiation" />
+  </wsdl:message>
+  <wsdl:message name="GetDocumentListRequest">
+    <wsdl:part name="GetDocumentListRequest" element="scdc1:GetDocumentList" />
+  </wsdl:message>
+  <wsdl:message name="ForeignTransferResponse">
+    <wsdl:part name="ForeignTransferResponse" element="scdc1:ForeignTransferResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCardsListResponse">
+    <wsdl:part name="GetCardsListResponse" element="sing1:GetCardsListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActivityFundForeignResponse">
+    <wsdl:part name="ActivityFundForeignResponse" element="sing1:ActivityFundForeignResponse" />
+  </wsdl:message>
+  <wsdl:message name="ImportSIMPMatchingInvoicesResponse">
+    <wsdl:part name="ImportSIMPMatchingInvoicesResponse" element="sing1:ImportSIMPMatchingInvoicesResponse" />
+  </wsdl:message>
+  <wsdl:message name="CashWithdrawalTransferRequest">
+    <wsdl:part name="CashWithdrawalTransferRequest" element="scdc1:CashWithdrawalTransfer" />
+  </wsdl:message>
+  <wsdl:message name="GetSwiftStatementRequest">
+    <wsdl:part name="GetSwiftStatementRequest" element="sing1:GetSwiftStatement" />
+  </wsdl:message>
+  <wsdl:message name="DomesticTransferResponse">
+    <wsdl:part name="DomesticTransferResponse" element="scdc1:DomesticTransferResponse" />
+  </wsdl:message>
+  <wsdl:message name="IngCdcHeader">
+    <wsdl:part name="IngCdcRequestHeader" element="shdr1:CcsHeader" />
+  </wsdl:message>
+  <wsdl:message name="ImportSIMPMatchingInvoicesRequest">
+    <wsdl:part name="ImportSIMPMatchingInvoicesRequest" element="sing1:ImportSIMPMatchingInvoices" />
+  </wsdl:message>
+  <wsdl:message name="GetMCReportRequest">
+    <wsdl:part name="GetMCReportRequest" element="sing1:GetMCReport" />
+  </wsdl:message>
+  <wsdl:message name="GetBatchAccountBalacesResponse">
+    <wsdl:part name="GetBatchAccountBalacesResponse" element="sing1:GetBatchAccountBalacesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActivityFundDomesticResponse">
+    <wsdl:part name="ActivityFundDomesticResponse" element="sing1:ActivityFundDomesticResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChangeCardLimitsRequest">
+    <wsdl:part name="ChangeCardLimitsRequest" element="sing1:ChangeCardLimits" />
+  </wsdl:message>
+  <wsdl:message name="SEPATransferRequest">
+    <wsdl:part name="SEPATransferRequest" element="scdc1:SEPATransfer" />
+  </wsdl:message>
+  <wsdl:message name="SEPATransferResponse">
+    <wsdl:part name="SEPATransferResponse" element="scdc1:SEPATransferResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrepareReportRequest">
+    <wsdl:part name="PrepareReportRequest" element="scdc1:PrepareReport" />
+  </wsdl:message>
+  <wsdl:message name="GetDDReportResponse">
+    <wsdl:part name="GetDDReportResponse" element="sing1:GetDDReportResponse" />
+  </wsdl:message>
+  <wsdl:portType name="cdc.ws.001.01Port">
+    <wsdl:operation name="GetAccountBalance">
+      <wsdl:input message="cdc:GetAccountBalanceRequest" />
+      <wsdl:output message="cdc:GetAccountBalanceResponse" />
+      <wsdl:fault name="ErrorReport" message="cdc:ErrorReport" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountReport">
+      <wsdl:input message="cdc:GetAccountReportRequest" />
+      <wsdl:output message="cdc:GetAccountReportResponse" />
+      <wsdl:fault name="ErrorReport" message="cdc:ErrorReport" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIncrementalAccountReport">
+      <wsdl:input message="cdc:GetIncrementalAccountReportRequest" />
+      <wsdl:output message="cdc:GetIncrementalAccountReportResponse" />
+      <wsdl:fault name="ErrorReport" message="cdc:ErrorReport" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStatement">
+      <wsdl:input message="cdc:GetStatementRequest" />
+      <wsdl:output message="cdc:GetStatementResponse" />
+      <wsdl:fault name="ErrorReport" message="cdc:ErrorReport" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentList">
+      <wsdl:input message="cdc:GetDocumentListRequest" />
+      <wsdl:output message="cdc:GetDocumentListResponse" />
+      <wsdl:fault name="ErrorReport" message="cdc:ErrorReport" />
+    </wsdl:operation>
+    <wsdl:operation name="PrepareReport">
+      <wsdl:input message="cdc:PrepareReportRequest" />
+      <wsdl:output message="cdc:PrepareReportResponse" />
+      <wsdl:fault name="ErrorReport" message="cdc:ErrorReport" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocument">
+      <wsdl:input message="cdc:GetDocumentRequest" />
+      <wsdl:output message="cdc:GetDocumentResponse" />
+      <wsdl:fault name="ErrorReport" message="cdc:ErrorReport" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPaymentStatusReport">
+      <wsdl:input message="cdc:GetPaymentStatusReportRequest" />
+      <wsdl:output message="cdc:GetPaymentStatusReportResponse" />
+      <wsdl:fault name="ErrorReport" message="cdc:ErrorReport" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportTransfersInitiation">
+      <wsdl:input message="cdc:ImportTransfersInitiationRequest" />
+      <wsdl:output message="cdc:ImportTransfersInitiationResponse" />
+      <wsdl:fault name="ErrorReport" message="cdc:ErrorReport" />
+    </wsdl:operation>
+    <wsdl:operation name="DomesticTransfer">
+      <wsdl:input message="cdc:DomesticTransferRequest" />
+      <wsdl:output message="cdc:DomesticTransferResponse" />
+      <wsdl:fault name="ErrorReport" message="cdc:ErrorReport" />
+    </wsdl:operation>
+    <wsdl:operation name="CashWithdrawalTransfer">
+      <wsdl:input message="cdc:CashWithdrawalTransferRequest" />
+      <wsdl:output message="cdc:CashWithdrawalTransferResponse" />
+      <wsdl:fault name="ErrorReport" message="cdc:ErrorReport" />
+    </wsdl:operation>
+    <wsdl:operation name="CashWithdrawalTransferWithNominals">
+      <wsdl:input message="cdc:CashWithdrawalTransferWithNominalsRequest" />
+      <wsdl:output message="cdc:CashWithdrawalTransferWithNominalsResponse" />
+      <wsdl:fault name="ErrorReport" message="cdc:ErrorReport" />
+    </wsdl:operation>
+    <wsdl:operation name="ForeignTransfer">
+      <wsdl:input message="cdc:ForeignTransferRequest" />
+      <wsdl:output message="cdc:ForeignTransferResponse" />
+      <wsdl:fault name="ErrorReport" message="cdc:ErrorReport" />
+    </wsdl:operation>
+    <wsdl:operation name="InternalTransfer">
+      <wsdl:input message="cdc:InternalTransferRequest" />
+      <wsdl:output message="cdc:InternalTransferResponse" />
+      <wsdl:fault name="ErrorReport" message="cdc:ErrorReport" />
+    </wsdl:operation>
+    <wsdl:operation name="SEPATransfer">
+      <wsdl:input message="cdc:SEPATransferRequest" />
+      <wsdl:output message="cdc:SEPATransferResponse" />
+      <wsdl:fault name="ErrorReport" message="cdc:ErrorReport" />
+    </wsdl:operation>
+    <wsdl:operation name="MT101Transfer">
+      <wsdl:input message="cdc:MT101TransferRequest" />
+      <wsdl:output message="cdc:MT101TransferResponse" />
+      <wsdl:fault name="ErrorReport" message="cdc:ErrorReport" />
+    </wsdl:operation>
+    <wsdl:operation name="DirectDebitInitiation">
+      <wsdl:input message="cdc:DirectDebitInitiationRequest" />
+      <wsdl:output message="cdc:DirectDebitInitiationResponse" />
+      <wsdl:fault name="ErrorReport" message="cdc:ErrorReport" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDDReport">
+      <wsdl:input message="cdc:GetDDReportRequest" />
+      <wsdl:output message="cdc:GetDDReportResponse" />
+      <wsdl:fault name="ErrorReport" message="cdc:ErrorReport" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMCReport">
+      <wsdl:input message="cdc:GetMCReportRequest" />
+      <wsdl:output message="cdc:GetMCReportResponse" />
+      <wsdl:fault name="ErrorReport" message="cdc:ErrorReport" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSwiftStatement">
+      <wsdl:input message="cdc:GetSwiftStatementRequest" />
+      <wsdl:output message="cdc:GetSwiftStatementResponse" />
+      <wsdl:fault name="ErrorReport" message="cdc:ErrorReport" />
+    </wsdl:operation>
+    <wsdl:operation name="ActivityFundDomestic">
+      <wsdl:input message="cdc:ActivityFundDomesticRequest" />
+      <wsdl:output message="cdc:ActivityFundDomesticResponse" />
+      <wsdl:fault name="ErrorReport" message="cdc:ErrorReport" />
+    </wsdl:operation>
+    <wsdl:operation name="ActivityFundForeign">
+      <wsdl:input message="cdc:ActivityFundForeignRequest" />
+      <wsdl:output message="cdc:ActivityFundForeignResponse" />
+      <wsdl:fault name="ErrorReport" message="cdc:ErrorReport" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportSIMPMatchingInvoices">
+      <wsdl:input message="cdc:ImportSIMPMatchingInvoicesRequest" />
+      <wsdl:output message="cdc:ImportSIMPMatchingInvoicesResponse" />
+      <wsdl:fault name="ErrorReport" message="cdc:ErrorReport" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCardsList">
+      <wsdl:input message="cdc:GetCardsListRequest" />
+      <wsdl:output message="cdc:GetCardsListResponse" />
+      <wsdl:fault name="ErrorReport" message="cdc:ErrorReport" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCardsList2">
+      <wsdl:input message="cdc:GetCardsListRequest2" />
+      <wsdl:output message="cdc:GetCardsListResponse2" />
+      <wsdl:fault name="ErrorReport" message="cdc:ErrorReport" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCardReport">
+      <wsdl:input message="cdc:GetCardReportRequest" />
+      <wsdl:output message="cdc:GetCardReportResponse" />
+      <wsdl:fault name="ErrorReport" message="cdc:ErrorReport" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCardStatement">
+      <wsdl:input message="cdc:GetCardStatementRequest" />
+      <wsdl:output message="cdc:GetCardStatementResponse" />
+      <wsdl:fault name="ErrorReport" message="cdc:ErrorReport" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeCardLimits">
+      <wsdl:input message="cdc:ChangeCardLimitsRequest" />
+      <wsdl:output message="cdc:ChangeCardLimitsResponse" />
+      <wsdl:fault name="ErrorReport" message="cdc:ErrorReport" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCardLimits">
+      <wsdl:input message="cdc:GetCardLimitsRequest" />
+      <wsdl:output message="cdc:GetCardLimitsResponse" />
+      <wsdl:fault name="ErrorReport" message="cdc:ErrorReport" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransferConfirmation">
+      <wsdl:input message="cdc:GetTransferConfirmationRequest" />
+      <wsdl:output message="cdc:GetTransferConfirmationResponse" />
+      <wsdl:fault name="ErrorReport" message="cdc:ErrorReport" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBatchAccountBalaces">
+      <wsdl:input message="cdc:GetBatchAccountBalacesRequest" />
+      <wsdl:output message="cdc:GetBatchAccountBalacesResponse" />
+      <wsdl:fault name="ErrorReport" message="cdc:ErrorReport" />
+    </wsdl:operation>
+    <wsdl:operation name="DeactivateOrCloseCard">
+      <wsdl:input message="cdc:DeactivateOrCloseCardRequest" />
+      <wsdl:output message="cdc:DeactivateOrCloseCardResponse" />
+      <wsdl:fault name="ErrorReport" message="cdc:ErrorReport" />
+    </wsdl:operation>
+    <wsdl:operation name="AppContent">
+      <wsdl:input message="cdc:AppContentRequest" />
+      <wsdl:output message="cdc:AppContentResponse" />
+      <wsdl:fault name="ErrorReport" message="cdc:ErrorReport" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="cdc.001.01SOAP" type="cdc:cdc.ws.001.01Port">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAccountReport">
+      <soap:operation soapAction="urn:ca:std:cdc:tech:wsdl:cdc.ws.001.01/GetAccountReport" />
+      <wsdl:input>
+        <soap:header message="cdc:IngCdcHeader" part="IngCdcRequestHeader" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorReport">
+        <soap:fault use="literal" name="ErrorReport" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountBalance">
+      <soap:operation soapAction="urn:ca:std:cdc:tech:wsdl:cdc.ws.001.01/GetAccountBalance" />
+      <wsdl:input>
+        <soap:header message="cdc:IngCdcHeader" part="IngCdcRequestHeader" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorReport">
+        <soap:fault use="literal" name="ErrorReport" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetIncrementalAccountReport">
+      <soap:operation soapAction="urn:ca:std:cdc:tech:wsdl:cdc.ws.001.01/GetIncrementalAccountReport" />
+      <wsdl:input>
+        <soap:header message="cdc:IngCdcHeader" part="IngCdcRequestHeader" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorReport">
+        <soap:fault use="literal" name="ErrorReport" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatement">
+      <soap:operation soapAction="urn:ca:std:cdc:tech:wsdl:cdc.ws.001.01/GetStatement" />
+      <wsdl:input>
+        <soap:header message="cdc:IngCdcHeader" part="IngCdcRequestHeader" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorReport">
+        <soap:fault use="literal" name="ErrorReport" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentList">
+      <soap:operation soapAction="urn:ca:std:cdc:tech:wsdl:cdc.ws.001.01/GetDocumentList" />
+      <wsdl:input>
+        <soap:header message="cdc:IngCdcHeader" part="IngCdcRequestHeader" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorReport">
+        <soap:fault use="literal" name="ErrorReport" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PrepareReport">
+      <soap:operation soapAction="urn:ca:std:cdc:tech:wsdl:cdc.ws.001.01/PrepareReport" />
+      <wsdl:input>
+        <soap:header message="cdc:IngCdcHeader" part="IngCdcRequestHeader" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorReport">
+        <soap:fault use="literal" name="ErrorReport" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocument">
+      <soap:operation soapAction="urn:ca:std:cdc:tech:wsdl:cdc.ws.001.01/GetDocument" />
+      <wsdl:input>
+        <soap:header message="cdc:IngCdcHeader" part="IngCdcRequestHeader" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorReport">
+        <soap:fault use="literal" name="ErrorReport" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPaymentStatusReport">
+      <soap:operation soapAction="urn:ca:std:cdc:tech:wsdl:cdc.ws.001.01/GetPaymentStatusReport" />
+      <wsdl:input>
+        <soap:header message="cdc:IngCdcHeader" part="IngCdcRequestHeader" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorReport">
+        <soap:fault use="literal" name="ErrorReport" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ImportTransfersInitiation">
+      <soap:operation soapAction="urn:ca:std:cdc:tech:wsdl:cdc.ws.001.01/ImportTransfersInitiation" />
+      <wsdl:input>
+        <soap:header message="cdc:IngCdcHeader" part="IngCdcRequestHeader" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorReport">
+        <soap:fault use="literal" name="ErrorReport" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DomesticTransfer">
+      <soap:operation soapAction="urn:ca:std:cdc:tech:wsdl:cdc.ws.001.01/DomesticTransfer" />
+      <wsdl:input>
+        <soap:header message="cdc:IngCdcHeader" part="IngCdcRequestHeader" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorReport">
+        <soap:fault use="literal" name="ErrorReport" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CashWithdrawalTransfer">
+      <soap:operation soapAction="urn:ca:std:cdc:tech:wsdl:cdc.ws.001.01/CashWithdrawalTransfer" />
+      <wsdl:input>
+        <soap:header message="cdc:IngCdcHeader" part="IngCdcRequestHeader" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorReport">
+        <soap:fault use="literal" name="ErrorReport" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CashWithdrawalTransferWithNominals">
+      <soap:operation soapAction="urn:ca:std:cdc:tech:wsdl:cdc.ws.001.01/CashWithdrawalTransferWithNominals" />
+      <wsdl:input>
+        <soap:header message="cdc:IngCdcHeader" part="IngCdcRequestHeader" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorReport">
+        <soap:fault use="literal" name="ErrorReport" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ForeignTransfer">
+      <soap:operation soapAction="urn:ca:std:cdc:tech:wsdl:cdc.ws.001.01/ForeignTransfer" />
+      <wsdl:input>
+        <soap:header message="cdc:IngCdcHeader" part="IngCdcRequestHeader" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorReport">
+        <soap:fault use="literal" name="ErrorReport" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="InternalTransfer">
+      <soap:operation soapAction="urn:ca:std:cdc:tech:wsdl:cdc.ws.001.01/InternalTransfer" />
+      <wsdl:input>
+        <soap:header message="cdc:IngCdcHeader" part="IngCdcRequestHeader" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorReport">
+        <soap:fault use="literal" name="ErrorReport" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SEPATransfer">
+      <soap:operation soapAction="urn:ca:std:cdc:tech:wsdl:cdc.ws.001.01/SEPATransfer" />
+      <wsdl:input>
+        <soap:header message="cdc:IngCdcHeader" part="IngCdcRequestHeader" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorReport">
+        <soap:fault use="literal" name="ErrorReport" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="MT101Transfer">
+      <soap:operation soapAction="urn:ca:std:cdc:tech:wsdl:cdc.ws.001.01/MT101Transfer" />
+      <wsdl:input>
+        <soap:header message="cdc:IngCdcHeader" part="IngCdcRequestHeader" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorReport">
+        <soap:fault use="literal" name="ErrorReport" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DirectDebitInitiation">
+      <soap:operation soapAction="urn:ca:std:cdc:tech:wsdl:cdc.ws.001.01/DirectDebitInitiation" />
+      <wsdl:input>
+        <soap:header message="cdc:IngCdcHeader" part="IngCdcRequestHeader" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorReport">
+        <soap:fault use="literal" name="ErrorReport" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDDReport">
+      <soap:operation soapAction="urn:ca:std:cdc:tech:wsdl:ing.cdc.ws.001.01/GetDDReport" />
+      <wsdl:input>
+        <soap:header message="cdc:IngCdcHeader" part="IngCdcRequestHeader" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorReport">
+        <soap:fault use="literal" name="ErrorReport" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetMCReport">
+      <soap:operation soapAction="urn:ca:std:cdc:tech:wsdl:ing.cdc.ws.001.01/GetMCReport" />
+      <wsdl:input>
+        <soap:header message="cdc:IngCdcHeader" part="IngCdcRequestHeader" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorReport">
+        <soap:fault use="literal" name="ErrorReport" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetSwiftStatement">
+      <soap:operation soapAction="urn:ca:std:cdc:tech:wsdl:ing.cdc.ws.001.01/GetSwiftStatement" />
+      <wsdl:input>
+        <soap:header message="cdc:IngCdcHeader" part="IngCdcRequestHeader" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorReport">
+        <soap:fault use="literal" name="ErrorReport" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ActivityFundDomestic">
+      <soap:operation soapAction="urn:ca:std:cdc:tech:wsdl:ing.cdc.ws.001.01/ActivityFundDomestic" />
+      <wsdl:input>
+        <soap:header message="cdc:IngCdcHeader" part="IngCdcRequestHeader" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorReport">
+        <soap:fault use="literal" name="ErrorReport" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ActivityFundForeign">
+      <soap:operation soapAction="urn:ca:std:cdc:tech:wsdl:ing.cdc.ws.001.01/ActivityFundForeign" />
+      <wsdl:input>
+        <soap:header message="cdc:IngCdcHeader" part="IngCdcRequestHeader" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorReport">
+        <soap:fault use="literal" name="ErrorReport" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ImportSIMPMatchingInvoices">
+      <soap:operation soapAction="urn:ca:std:cdc:tech:wsdl:ing.cdc.ws.001.01/ImportSIMPMatchingInvoices" />
+      <wsdl:input>
+        <soap:header message="cdc:IngCdcHeader" part="IngCdcRequestHeader" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorReport">
+        <soap:fault use="literal" name="ErrorReport" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardsList">
+      <soap:operation soapAction="urn:ca:std:cdc:tech:wsdl:ing.cdc.ws.001.01/GetCardsList" />
+      <wsdl:input>
+        <soap:header message="cdc:IngCdcHeader" part="IngCdcRequestHeader" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorReport">
+        <soap:fault use="literal" name="ErrorReport" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardsList2">
+      <soap:operation soapAction="urn:ca:std:cdc:tech:wsdl:ing.cdc.ws.001.01/GetCardsList2" />
+      <wsdl:input>
+        <soap:header message="cdc:IngCdcHeader" part="IngCdcRequestHeader" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorReport">
+        <soap:fault use="literal" name="ErrorReport" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardReport">
+      <soap:operation soapAction="urn:ca:std:cdc:tech:wsdl:ing.cdc.ws.001.01/GetCardReport" />
+      <wsdl:input>
+        <soap:header message="cdc:IngCdcHeader" part="IngCdcRequestHeader" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorReport">
+        <soap:fault use="literal" name="ErrorReport" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardStatement">
+      <soap:operation soapAction="urn:ca:std:cdc:tech:wsdl:cdc.ws.001.01/GetStatement" />
+      <wsdl:input>
+        <soap:header message="cdc:IngCdcHeader" part="IngCdcRequestHeader" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorReport">
+        <soap:fault use="literal" name="ErrorReport" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeCardLimits">
+      <soap:operation soapAction="urn:ca:std:cdc:tech:wsdl:cdc.ws.001.01/ChangeCardLimits" />
+      <wsdl:input>
+        <soap:header message="cdc:IngCdcHeader" part="IngCdcRequestHeader" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorReport">
+        <soap:fault use="literal" name="ErrorReport" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardLimits">
+      <soap:operation soapAction="urn:ca:std:cdc:tech:wsdl:cdc.ws.001.01/GetCardLimits" />
+      <wsdl:input>
+        <soap:header message="cdc:IngCdcHeader" part="IngCdcRequestHeader" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorReport">
+        <soap:fault use="literal" name="ErrorReport" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransferConfirmation">
+      <soap:operation soapAction="urn:ca:std:cdc:tech:wsdl:cdc.ws.001.01/GetTransferConfirmation" />
+      <wsdl:input>
+        <soap:header message="cdc:IngCdcHeader" part="IngCdcRequestHeader" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorReport">
+        <soap:fault use="literal" name="ErrorReport" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetBatchAccountBalaces">
+      <soap:operation soapAction="urn:ca:std:cdc:tech:wsdl:cdc.ws.001.01/GetBatchAccountBalaces" />
+      <wsdl:input>
+        <soap:header message="cdc:IngCdcHeader" part="IngCdcRequestHeader" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorReport">
+        <soap:fault use="literal" name="ErrorReport" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeactivateOrCloseCard">
+      <soap:operation soapAction="urn:ca:std:cdc:tech:wsdl:ing.cdc.001.01/DeactivateOrCloseCard" />
+      <wsdl:input>
+        <soap:header message="cdc:IngCdcHeader" part="IngCdcRequestHeader" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorReport">
+        <soap:fault use="literal" name="ErrorReport" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AppContent">
+      <soap:operation soapAction="urn:ca:std:cdc:tech:wsdl:ing.cdc.001.01/AppContent" />
+      <wsdl:input>
+        <soap:header message="cdc:IngCdcHeader" part="IngCdcRequestHeader" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorReport">
+        <soap:fault use="literal" name="ErrorReport" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="cdc.001.01Service">
+    <wsdl:port name="cdc.001.01SOAP" binding="cdc:cdc.001.01SOAP">
+      <soap:address location="https://ws.ingbusiness.pl/ing-ccs/cdc00101" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="a02e94ed-c1b6-47ea-b84f-362897f2ab96" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://ws.ingbusiness.pl/ing-ccs/cdc00101?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="crds.xsd" MetadataType="Schema" ID="c60b07be-7a5d-491d-ae7d-b4f48fd138ee" SourceId="1" SourceUrl="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/crds.007.001.02.xsd" />
+    <MetadataFile FileName="camt.xsd" MetadataType="Schema" ID="7f1ffdd8-f6bc-4efd-8ce2-51991fb94677" SourceId="1" SourceUrl="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/camt.003.001.04.xsd" />
+    <MetadataFile FileName="gbab.xsd" MetadataType="Schema" ID="d186daea-7694-4fc0-99bd-56121a0df3a3" SourceId="1" SourceUrl="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/gbab.001.001.01.xsd" />
+    <MetadataFile FileName="camt1.xsd" MetadataType="Schema" ID="1d7db8e8-c889-444d-817f-ae28a0ceb753" SourceId="1" SourceUrl="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/camt.004.001.04.xsd" />
+    <MetadataFile FileName="camt2.xsd" MetadataType="Schema" ID="03893db0-55ce-4b34-98c7-b6986c28334e" SourceId="1" SourceUrl="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/camt.053.001.02.xsd" />
+    <MetadataFile FileName="rpts.xsd" MetadataType="Schema" ID="876fb1ff-cfc7-438f-97c7-c9f646f28943" SourceId="1" SourceUrl="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/rpts.012.001.01.xsd" />
+    <MetadataFile FileName="crds1.xsd" MetadataType="Schema" ID="89ea81d5-51d7-4056-aa62-318bb746ae18" SourceId="1" SourceUrl="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/crds.002.001.02.xsd" />
+    <MetadataFile FileName="rpts1.xsd" MetadataType="Schema" ID="2708a6d2-0e36-4637-bde6-219b6448f702" SourceId="1" SourceUrl="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/rpts.005.001.01.xsd" />
+    <MetadataFile FileName="rpts2.xsd" MetadataType="Schema" ID="b144ef4a-5b68-4976-a1b9-9e181288e7ab" SourceId="1" SourceUrl="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/rpts.005.001.02.xsd" />
+    <MetadataFile FileName="docc.xsd" MetadataType="Schema" ID="d16ca595-fcd1-48ef-bb84-9a251c5e3aa6" SourceId="1" SourceUrl="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/docc.002.001.01.xsd" />
+    <MetadataFile FileName="pain.xsd" MetadataType="Schema" ID="d8f7a86d-5827-41cb-8a4b-c0171742b5ca" SourceId="1" SourceUrl="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/pain.001.001.02.xsd" />
+    <MetadataFile FileName="itsr.xsd" MetadataType="Schema" ID="4cedf3f2-629c-460a-bbac-7adfa3cdd652" SourceId="1" SourceUrl="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/itsr.001.001.02.xsd" />
+    <MetadataFile FileName="rpts3.xsd" MetadataType="Schema" ID="c4edd718-822e-4939-b262-f4cbf30c876f" SourceId="1" SourceUrl="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/rpts.003.001.02.xsd" />
+    <MetadataFile FileName="cdc.xsd" MetadataType="Schema" ID="6665f972-8ba2-4f8b-ba79-59c0d98e486f" SourceId="1" SourceUrl="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/cdc.001.01.xsd" />
+    <MetadataFile FileName="cashWithdrawalTransferWithNominalSpec.xsd" MetadataType="Schema" ID="1733000e-3294-441b-954f-ca834cc819d0" SourceId="1" SourceUrl="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/cashWithdrawalTransferWithNominalSpec.001.001.01.xsd" />
+    <MetadataFile FileName="ismo.xsd" MetadataType="Schema" ID="7ae0326b-7ac7-4643-b3f3-5c4853745b2e" SourceId="1" SourceUrl="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/ismo.001.001.01.xsd" />
+    <MetadataFile FileName="crds2.xsd" MetadataType="Schema" ID="9ecdb97e-92e6-4e41-a065-8d71c0908091" SourceId="1" SourceUrl="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/crds.006.001.01.xsd" />
+    <MetadataFile FileName="crds3.xsd" MetadataType="Schema" ID="efb4cb27-9a1d-41b3-b182-9ab35e19e4a7" SourceId="1" SourceUrl="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/crds.005.001.01.xsd" />
+    <MetadataFile FileName="xmldsig-core-schema.xsd" MetadataType="Schema" ID="0d0c34a4-4cc7-4bf5-bf3d-4cfb8bb8c0c8" SourceId="1" SourceUrl="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/xmldsig-core-schema.xsd" />
+    <MetadataFile FileName="docc1.xsd" MetadataType="Schema" ID="2e015398-9e67-4aa3-93c7-11584ed59d22" SourceId="1" SourceUrl="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/docc.001.001.01.xsd" />
+    <MetadataFile FileName="cmrq.xsd" MetadataType="Schema" ID="7be58c18-ab12-49fa-95b0-f1e53a7d02cf" SourceId="1" SourceUrl="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/cmrq.004.001.01.xsd" />
+    <MetadataFile FileName="rpts4.xsd" MetadataType="Schema" ID="5416d949-fc72-4eef-ba43-47b4c4901634" SourceId="1" SourceUrl="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/rpts.011.001.01.xsd" />
+    <MetadataFile FileName="cmrq1.xsd" MetadataType="Schema" ID="c7a313a6-4814-4581-a107-6679f9836e2e" SourceId="1" SourceUrl="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/cmrq.001.001.02.xsd" />
+    <MetadataFile FileName="tsmt.xsd" MetadataType="Schema" ID="3f0cf7d4-6c1e-4de9-99c4-5db6b08b38da" SourceId="1" SourceUrl="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/tsmt.016.001.03.xsd" />
+    <MetadataFile FileName="pain1.xsd" MetadataType="Schema" ID="ad368410-1836-4e2b-ba69-f998f7deea73" SourceId="1" SourceUrl="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/pain.002.001.03.xsd" />
+    <MetadataFile FileName="crds4.xsd" MetadataType="Schema" ID="6fb62e29-5737-4c8d-af52-79d5ecf74896" SourceId="1" SourceUrl="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/crds.001.001.01.xsd" />
+    <MetadataFile FileName="appContent.xsd" MetadataType="Schema" ID="44cf97f3-9233-4480-a755-55e27602c7f6" SourceId="1" SourceUrl="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/appContent.002.001.01.xsd" />
+    <MetadataFile FileName="rpts5.xsd" MetadataType="Schema" ID="ede6f8bf-72bb-4a1a-8164-d719ddc9b56e" SourceId="1" SourceUrl="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/rpts.004.001.02.xsd" />
+    <MetadataFile FileName="pain2.xsd" MetadataType="Schema" ID="26eb7109-f6d3-4690-9f12-1ba927c8aff7" SourceId="1" SourceUrl="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/pain.008.001.02.xsd" />
+    <MetadataFile FileName="itin.xsd" MetadataType="Schema" ID="09b39118-3c09-4291-8604-a96cf17cfa14" SourceId="1" SourceUrl="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/itin.001.001.01.xsd" />
+    <MetadataFile FileName="appContent1.xsd" MetadataType="Schema" ID="6b051b61-1339-4de8-a7ac-acb739328415" SourceId="1" SourceUrl="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/appContent.001.001.01.xsd" />
+    <MetadataFile FileName="past.xsd" MetadataType="Schema" ID="476fc521-82c8-4d9d-8694-11d204e80135" SourceId="1" SourceUrl="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/past.001.001.02.xsd" />
+    <MetadataFile FileName="crds5.xsd" MetadataType="Schema" ID="5f7437df-81e5-4215-b0d3-78baa2ddc139" SourceId="1" SourceUrl="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/crds.002.001.01.xsd" />
+    <MetadataFile FileName="crds6.xsd" MetadataType="Schema" ID="e3527e11-57e4-4f80-ac38-35a7ff129f0c" SourceId="1" SourceUrl="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/crds.004.001.01.xsd" />
+    <MetadataFile FileName="rpts6.xsd" MetadataType="Schema" ID="6d560043-345b-44cf-b699-d43e9140d5a2" SourceId="1" SourceUrl="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/rpts.013.001.01.xsd" />
+    <MetadataFile FileName="cdc.ws.001.wsdl" MetadataType="Wsdl" ID="0dc58e77-e453-43c9-8e67-ef8cfc033715" SourceId="1" SourceUrl="https://ws.ingbusiness.pl/ing-ccs/cdc00101?wsdl" />
+    <MetadataFile FileName="cmrq2.xsd" MetadataType="Schema" ID="b811cd69-5b60-448f-91b1-1e4418c444d9" SourceId="1" SourceUrl="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/cmrq.002.001.02.xsd" />
+    <MetadataFile FileName="trco.xsd" MetadataType="Schema" ID="d16298df-eef0-42fe-a11e-032900bde75d" SourceId="1" SourceUrl="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/trco.001.001.01.xsd" />
+    <MetadataFile FileName="pain3.xsd" MetadataType="Schema" ID="30c5434d-1c51-41e9-959f-05413a9e2882" SourceId="1" SourceUrl="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/pain.001.001.03.xsd" />
+    <MetadataFile FileName="camt3.xsd" MetadataType="Schema" ID="34067936-a2a4-4a88-84ad-c4cad66f3fcb" SourceId="1" SourceUrl="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/camt.052.001.02.xsd" />
+    <MetadataFile FileName="trco1.xsd" MetadataType="Schema" ID="dba23ff4-fed2-4b23-ada3-04b74a57b541" SourceId="1" SourceUrl="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/trco.002.001.01.xsd" />
+    <MetadataFile FileName="crds7.xsd" MetadataType="Schema" ID="509016d5-6d12-4c8b-8312-6f9b4ea3c8ea" SourceId="1" SourceUrl="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/crds.008.001.02.xsd" />
+    <MetadataFile FileName="gbab1.xsd" MetadataType="Schema" ID="931b2e1d-12f9-4da5-aa84-5fce473ea9c4" SourceId="1" SourceUrl="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/gbab.002.001.01.xsd" />
+    <MetadataFile FileName="ismi.xsd" MetadataType="Schema" ID="4d9e4f77-5b5f-4777-b8ec-ef44b599287d" SourceId="1" SourceUrl="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/ismi.001.001.01.xsd" />
+    <MetadataFile FileName="camt4.xsd" MetadataType="Schema" ID="7e82e8cd-ff34-44c4-a613-50ea4471d531" SourceId="1" SourceUrl="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/camt.053.001.01.xsd" />
+    <MetadataFile FileName="rpts7.xsd" MetadataType="Schema" ID="f1216bd3-e22f-4a54-9b9d-6baff66622bb" SourceId="1" SourceUrl="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/rpts.002.001.02.xsd" />
+    <MetadataFile FileName="ing.xsd" MetadataType="Schema" ID="dc8dc076-bc7a-43cc-9241-832cc38caed7" SourceId="1" SourceUrl="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/ing.cdc.001.01.xsd" />
+    <MetadataFile FileName="rpts8.xsd" MetadataType="Schema" ID="b1f54ca6-f17e-42ec-b164-dcc79dd2285c" SourceId="1" SourceUrl="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/rpts.001.001.02.xsd" />
+    <MetadataFile FileName="itin1.xsd" MetadataType="Schema" ID="2c5727dc-454d-434c-99dd-01ce1c9cc3a8" SourceId="1" SourceUrl="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/itin.001.001.02.xsd" />
+    <MetadataFile FileName="mhdr.xsd" MetadataType="Schema" ID="e536fe18-194f-409e-8ad5-2efc7e3048a1" SourceId="1" SourceUrl="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/mhdr.001.001.01.xsd" />
+    <MetadataFile FileName="cmrq3.xsd" MetadataType="Schema" ID="283005e7-4679-4678-bcc8-c15e1681f901" SourceId="1" SourceUrl="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/cmrq.003.001.01.xsd" />
+    <MetadataFile FileName="rpts9.xsd" MetadataType="Schema" ID="c4a08061-cc96-40da-8d3b-2eae91599148" SourceId="1" SourceUrl="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/rpts.014.001.01.xsd" />
+    <MetadataFile FileName="crds8.xsd" MetadataType="Schema" ID="4e295b58-8da8-4e0d-9bec-1c5171455ac9" SourceId="1" SourceUrl="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/crds.003.001.01.xsd" />
+    <MetadataFile FileName="dies.xsd" MetadataType="Schema" ID="00ed2fbf-cbdd-4d48-a734-1b51bca380b8" SourceId="1" SourceUrl="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/dies.001.001.01.xsd" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

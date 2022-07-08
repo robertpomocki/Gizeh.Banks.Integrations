@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="urn:ca:std:ccs:ing:tech:xsd:ismi.001.001.01" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="urn:ca:std:ccs:ing:tech:xsd:ismi.001.001.01" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Document" type="Document" />
+  <xs:complexType name="Document">
+    <xs:sequence>
+      <xs:element name="ImpSimpInv" type="ImportSimpMatchingInvoices" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ImportSimpMatchingInvoices">
+    <xs:sequence>
+      <xs:element name="MsgId" type="MessageIdentyfication" />
+      <xs:element name="ImpInf" type="ImportInfo" />
+      <xs:element name="ImpFile" type="File" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MessageIdentyfication">
+    <xs:sequence>
+      <xs:element name="Id" type="Max35Text" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="Max35Text">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="35" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ImportInfo">
+    <xs:sequence>
+      <xs:element name="ImpType" type="ImpType" />
+      <xs:element minOccurs="0" name="ImpRecentFile" type="Bool" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="ImpType">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="35" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Bool">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="4" />
+      <xs:maxLength value="5" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="File">
+    <xs:restriction base="xs:base64Binary" />
+  </xs:simpleType>
+</xs:schema>

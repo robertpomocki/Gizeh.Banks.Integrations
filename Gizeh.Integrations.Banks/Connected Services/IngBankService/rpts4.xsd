@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="urn:ca:std:ccs:ing:tech:xsd:rpts.011.001.01" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="urn:ca:std:ccs:ing:tech:xsd:rpts.011.001.01" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Document" type="Document" />
+  <xs:complexType name="Document">
+    <xs:sequence>
+      <xs:element name="GetDDRpt" type="GetDDReport" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetDDReport">
+    <xs:sequence>
+      <xs:element name="MsgId" type="MessageIdentification" />
+      <xs:element name="RptDDQryDef" type="DDReportQueryDefinition" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MessageIdentification">
+    <xs:sequence>
+      <xs:element name="Id" type="Max35Text" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="Max35Text">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="35" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="DDReportQueryDefinition">
+    <xs:sequence>
+      <xs:element name="RptDDCrit" type="DDReportCriteria" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DDReportCriteria">
+    <xs:sequence>
+      <xs:element name="NewCrit" type="NewCriteria" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="NewCriteria">
+    <xs:sequence>
+      <xs:element name="SchCrit" type="SearchCriteria" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SearchCriteria">
+    <xs:sequence>
+      <xs:element name="Cdtr" type="CreditorNumber" />
+      <xs:element name="TrnTp" type="TransactionType" />
+      <xs:element name="PmtDt" type="PaymentDate" />
+      <xs:element name="RptId" type="FileNumber" />
+      <xs:element minOccurs="0" name="RptFrmt" type="Const3CapitalText" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CreditorNumber">
+    <xs:sequence>
+      <xs:element name="EQ" type="Max15NumericText" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="Max15NumericText">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[0-9]{1,15}" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="TransactionType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EQ" type="Const3CapitalText" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="Const3CapitalText">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[A-Z]{3,3}" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="PaymentDate">
+    <xs:sequence>
+      <xs:element name="DtSch" type="DateDetails" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DateDetails">
+    <xs:sequence>
+      <xs:element name="Dt" type="ISODate" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="ISODate">
+    <xs:restriction base="xs:date" />
+  </xs:simpleType>
+  <xs:complexType name="FileNumber">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EQ" type="ISONumber" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="ISONumber">
+    <xs:restriction base="xs:integer" />
+  </xs:simpleType>
+</xs:schema>

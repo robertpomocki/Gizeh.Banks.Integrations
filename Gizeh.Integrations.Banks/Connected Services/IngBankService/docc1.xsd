@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="urn:ca:std:cdc:tech:xsd:docc.001.001.01" elementFormDefault="qualified" targetNamespace="urn:ca:std:cdc:tech:xsd:docc.001.001.01" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Document" type="Document" />
+  <xs:complexType name="Document">
+    <xs:sequence>
+      <xs:element name="DeactivateOrCloseCard" type="DeactivateOrCloseCardType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DeactivateOrCloseCardType">
+    <xs:sequence>
+      <xs:element name="MsgId" type="MessageIdentification" />
+      <xs:element minOccurs="1" maxOccurs="1" name="CardDetails" type="CardDetailsType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MessageIdentification">
+    <xs:sequence>
+      <xs:element name="Id" type="Max35Text" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CardDetailsType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="CardNo" type="CardNoType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CardId" type="CardNoType" />
+      <xs:element minOccurs="1" maxOccurs="1" name="OpType" type="OperationType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DeactCode" type="DeactCodeType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="CardNoType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="25" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Max35Text">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="35" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="OperationType">
+    <xs:annotation>
+      <xs:documentation>Operation Type: CC - close card, DC - deactivate card</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CC" />
+      <xs:enumeration value="DC" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="DeactCodeType">
+    <xs:annotation>
+      <xs:documentation>Deactivation cause: 0 - card stolen, 1 - card lost, 3 - card not received
+            </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="0" />
+      <xs:enumeration value="1" />
+      <xs:enumeration value="3" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

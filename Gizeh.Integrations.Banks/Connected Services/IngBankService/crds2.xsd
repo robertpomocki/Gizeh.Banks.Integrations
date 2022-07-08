@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="urn:ca:std:cdc:tech:xsd:crds.006.001.01" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="urn:ca:std:cdc:tech:xsd:crds.006.001.01" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Document" type="Document" />
+  <xs:complexType name="Document">
+    <xs:sequence>
+      <xs:element name="BkToCstmrCardRpt" type="BkToCstmrCardRptType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BkToCstmrCardRptType">
+    <xs:sequence>
+      <xs:element name="GrpHdr" type="GrpHdrType" />
+      <xs:element name="Rpt" type="RptType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GrpHdrType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MsgId" type="Max35Text" />
+      <xs:element minOccurs="0" name="CreDtTm" type="ISODateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RptType">
+    <xs:sequence>
+      <xs:element name="CreDtTm" type="ISODateTime" />
+      <xs:element name="FrToDt" type="FrToDtType" />
+      <xs:element name="Acct" type="AcctType" />
+      <xs:element minOccurs="0" maxOccurs="2" name="Bal" type="BalType" />
+      <xs:element minOccurs="0" name="AddtlRptInf" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Ntry" type="NtryType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FrToDtType">
+    <xs:sequence>
+      <xs:element name="FrDtTm" type="ISODateTime" />
+      <xs:element name="ToDtTm" type="ISODateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AcctType">
+    <xs:sequence>
+      <xs:element name="Id" type="IdType" />
+      <xs:element name="Ownr" type="OwnrType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="IdType">
+    <xs:sequence>
+      <xs:element name="Other" type="OtherType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OtherType">
+    <xs:sequence>
+      <xs:element name="Id" type="Max35Text" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OwnrType">
+    <xs:sequence>
+      <xs:element name="Nm" type="Max70Text" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BalType">
+    <xs:sequence>
+      <xs:element name="Tp" type="TpType" />
+      <xs:element minOccurs="0" name="Amt" type="AmtType" />
+      <xs:element minOccurs="0" name="CdtDbtInd" type="CdtDbtIndType" />
+      <xs:element name="Dt" type="DtType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TpType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cd" type="CdType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DtType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Dt" type="ISODate" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="NtryType">
+    <xs:sequence>
+      <xs:element name="NtryRef" type="xs:integer" />
+      <xs:element name="Amt" type="AmtType" />
+      <xs:element name="CdtDbtInd" type="CdtDbtIndType" />
+      <xs:element name="Sts" type="StsType" />
+      <xs:element minOccurs="0" name="BookgDt" type="BookgDtType" />
+      <xs:element name="ValDt" type="ValDtType" />
+      <xs:element name="BkTxCd" type="BkTxCdType" />
+      <xs:element name="AmtDtls" type="AmtDtlsType" />
+      <xs:element name="NtryDtls" type="NtryDtlsType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BookgDtType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DtTm" type="ISODateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ValDtType">
+    <xs:sequence>
+      <xs:element name="DtTm" type="ISODateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BkTxCdType">
+    <xs:sequence>
+      <xs:element name="Domn" type="DomnType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DomnType">
+    <xs:sequence>
+      <xs:element name="Cd" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AmtDtlsType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="InstdAmt" type="AmtType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="NtryDtlsType">
+    <xs:sequence>
+      <xs:element name="TxDtls" type="TxDtlsType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TxDtlsType">
+    <xs:sequence>
+      <xs:element name="RltdPties" type="RltdPtiesType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RltdPtiesType">
+    <xs:sequence>
+      <xs:element name="Cdtr" type="CdtrType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CdtrType">
+    <xs:sequence>
+      <xs:element name="Nm" type="xs:string" />
+      <xs:element name="Othr" type="OthrType" />
+      <xs:element name="PstlAdr" type="PstlAdrType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OthrType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PstlAdrType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="2" name="AdrLine" type="xs:string" />
+      <xs:element minOccurs="0" name="Ctry" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AmtType">
+    <xs:simpleContent>
+      <xs:extension base="xs:decimal">
+        <xs:attribute name="Ccy" type="CurrencyCode" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="ISODateTime">
+    <xs:restriction base="xs:dateTime" />
+  </xs:simpleType>
+  <xs:simpleType name="ISODate">
+    <xs:restriction base="xs:date" />
+  </xs:simpleType>
+  <xs:simpleType name="Max4Text">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="4" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Max16Text">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="16" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Max35Text">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="35" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Max50Text">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="50" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Max70Text">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="70" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Max500Text">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="500" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Max11Integer">
+    <xs:restriction base="xs:integer">
+      <xs:pattern value="[0-9]{0,11}" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Exactly2Letters">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[a-zA-Z]{2,2}" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AmountType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[a-zA-Z]{3,3}[0-9]{0,16}" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="StsType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="BOOK" />
+      <xs:enumeration value="PDNG" />
+      <xs:enumeration value="INFO" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="CdType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="OPBD" />
+      <xs:enumeration value="CLBD" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="CdtDbtIndType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CRDT" />
+      <xs:enumeration value="DBIT" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="CurrencyCode">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[A-Z]{3,3}" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

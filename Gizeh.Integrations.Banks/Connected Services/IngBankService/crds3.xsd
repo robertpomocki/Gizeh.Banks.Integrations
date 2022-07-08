@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="urn:ca:std:cdc:tech:xsd:crds.005.001.01" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="urn:ca:std:cdc:tech:xsd:crds.005.001.01" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Document" type="Document" />
+  <xs:complexType name="Document">
+    <xs:sequence>
+      <xs:element name="GetCrdRpt" type="GetCardReportType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetCardReportType">
+    <xs:sequence>
+      <xs:element name="GrpHdr" type="GrpHdrType" />
+      <xs:element name="GetCardRpt" type="GetCardRptType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GrpHdrType">
+    <xs:sequence>
+      <xs:element name="MsgId" type="Max35Text" />
+      <xs:element name="CreDtTm" type="ISODateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="Max35Text">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="35" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ISODateTime">
+    <xs:restriction base="xs:dateTime" />
+  </xs:simpleType>
+  <xs:complexType name="GetCardRptType">
+    <xs:sequence>
+      <xs:element name="AcctRptQryDef" type="AcctRptQryDefType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AcctRptQryDefType">
+    <xs:sequence>
+      <xs:element name="AcctRptCrit" type="AcctRptCritType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AcctRptCritType">
+    <xs:sequence>
+      <xs:element name="NewCrit" type="NewCritType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="NewCritType">
+    <xs:sequence>
+      <xs:element name="SchCrit" type="SchCritType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SchCritType">
+    <xs:sequence>
+      <xs:element name="AcctId" type="AcctIdType" />
+      <xs:element name="AcctRptValDt" type="AcctRptValDtType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AcctIdType">
+    <xs:sequence>
+      <xs:element name="EQ" type="EQType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EQType">
+    <xs:choice>
+      <xs:element name="PrtryAcct" type="PrtryAcctType" />
+      <xs:element name="Othr" type="OthrType" />
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType name="PrtryAcctType">
+    <xs:sequence>
+      <xs:element name="Id" type="Max35Text" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OthrType">
+    <xs:sequence>
+      <xs:element name="Id" type="Max20NumericText" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="Max20NumericText">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[0-9]{1,20}" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="AcctRptValDtType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DtSch" type="DtSchType" />
+      <xs:element minOccurs="0" name="DtBgk" type="DtBgkType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DtSchType">
+    <xs:sequence>
+      <xs:element name="FrDt" type="ISODate" />
+      <xs:element name="ToDt" type="ISODate" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DtBgkType">
+    <xs:sequence>
+      <xs:element name="FrDt" type="ISODate" />
+      <xs:element name="ToDt" type="ISODate" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="ISODate">
+    <xs:restriction base="xs:date" />
+  </xs:simpleType>
+</xs:schema>

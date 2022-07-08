@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="urn:ca:std:ccs:ing:tech:xsd:ismo.001.001.01" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="urn:ca:std:ccs:ing:tech:xsd:ismo.001.001.01" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Document" type="Document" />
+  <xs:complexType name="Document">
+    <xs:sequence>
+      <xs:element name="ImpResp" type="ImportSIMPMatchingInvoicesResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ImportSIMPMatchingInvoicesResponse">
+    <xs:sequence>
+      <xs:element name="GrpHdr" type="GrpHeader" />
+      <xs:element name="ImpResInf" type="ImportResponseInformation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GrpHeader">
+    <xs:sequence>
+      <xs:element name="MsgId" type="MessageId" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MessageId">
+    <xs:sequence>
+      <xs:element name="Id" type="Max35Text" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="Max35Text">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="35" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ImportResponseInformation">
+    <xs:sequence>
+      <xs:element name="TxSts" type="Max35Text" />
+      <xs:element name="NoOfRows" type="Number" />
+      <xs:element name="NoOfCorrectRows" type="Number" />
+      <xs:element name="NoOfInvalidRows" type="Number" />
+      <xs:element name="Amt" type="CurrencyAndAmount" />
+      <xs:element name="CtrlSum" type="Max35Text" />
+      <xs:element minOccurs="0" name="Errors" type="ImportErrors" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="Number">
+    <xs:restriction base="xs:integer" />
+  </xs:simpleType>
+  <xs:complexType name="CurrencyAndAmount">
+    <xs:simpleContent>
+      <xs:extension base="CurrencyAndAmount_SimpleType">
+        <xs:attribute name="Ccy" type="CurrencyCode" use="optional" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="CurrencyAndAmount_SimpleType">
+    <xs:restriction base="xs:decimal">
+      <xs:minInclusive value="0" />
+      <xs:fractionDigits value="5" />
+      <xs:totalDigits value="18" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="CurrencyCode">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[A-Z]{3,3}" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ImportErrors">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ErrorNtry" type="ImportErrorEntry" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ImportErrorEntry">
+    <xs:sequence>
+      <xs:element name="LineNo" type="Number" />
+      <xs:element name="ErrorDesc" type="Text" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="Text">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+</xs:schema>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="urn:ca:std:cdc:tech:xsd:crds.007.001.02" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="urn:ca:std:cdc:tech:xsd:crds.007.001.02" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Document" type="Document" />
+  <xs:complexType name="Document">
+    <xs:sequence>
+      <xs:element name="ChngCrdLmt" type="ChangeCardLimitsType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ChangeCardLimitsType">
+    <xs:sequence>
+      <xs:element name="GrpHdr" type="GrpHdrType" />
+      <xs:element minOccurs="1" maxOccurs="unbounded" name="ChngLmt" type="ChngLmtType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ChngLmtType">
+    <xs:sequence>
+      <xs:element name="CrdInf" type="CrdInfType" />
+      <xs:element name="Lmt" type="LmtType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GrpHdrType">
+    <xs:sequence>
+      <xs:element name="MsgId" type="Max35Text" />
+      <xs:element name="CreDtTm" type="ISODateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="Max35Text">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="35" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ISODateTime">
+    <xs:restriction base="xs:dateTime" />
+  </xs:simpleType>
+  <xs:complexType name="CrdInfType">
+    <xs:sequence>
+      <xs:element name="Acct" type="AcctType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AcctType">
+    <xs:sequence>
+      <xs:element name="Id" type="IdType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="IdType">
+    <xs:sequence>
+      <xs:element name="PrtryAcct" type="PrtryAcctType" />
+      <xs:element name="Othr" type="OthrType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PrtryAcctType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="Max35Text" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OthrType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="Max20NumericText" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="Max20NumericText">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[0-9]{1,20}" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="LmtType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MthPmtLmt" type="LimitType" />
+      <xs:element minOccurs="0" name="MthCashLmt" type="LimitType" />
+      <xs:element minOccurs="0" name="DlyPmtLmt" type="LimitType" />
+      <xs:element minOccurs="0" name="DlyIntPmtLmt" type="LimitType" />
+      <xs:element minOccurs="0" name="DlyAbrPmtLmt" type="LimitType" />
+      <xs:element minOccurs="0" name="DlyAtmLmt" type="LimitType" />
+      <xs:element minOccurs="0" name="DlyAbrAtmLmt" type="LimitType" />
+      <xs:element minOccurs="0" name="DlyCashLmt" type="LimitType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="LimitType">
+    <xs:simpleContent>
+      <xs:extension base="Max15DecimalText">
+        <xs:attribute name="Ccy" type="CurrencyCode" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="Max15DecimalText">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[0-9]{1,13}[.]{0,1}[0-9]{0,2}" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="CurrencyCode">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[A-Z]{3,3}" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

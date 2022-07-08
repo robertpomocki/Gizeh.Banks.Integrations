@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:M20="urn:iso:std:iso:20022:tech:xsd:pain.001.001.02" xmlns:xades="http://uri.etsi.org/01903/v1.3.2#" xmlns:M24="urn:ca:std:ccs:ing:tech:xsd:itin.001.001.01" xmlns:M23="urn:iso:std:iso:20022:tech:xsd:pain.008.001.02" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns="urn:ca:std:ccs:tech:xsd:dies.001.001.01" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="urn:ca:std:ccs:tech:xsd:dies.001.001.01" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/xmldsig-core-schema.xsd" namespace="http://www.w3.org/2000/09/xmldsig#" />
+  <xs:import schemaLocation="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/pain.001.001.02.xsd" namespace="urn:iso:std:iso:20022:tech:xsd:pain.001.001.02" />
+  <xs:import schemaLocation="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/pain.008.001.02.xsd" namespace="urn:iso:std:iso:20022:tech:xsd:pain.008.001.02" />
+  <xs:import schemaLocation="https://ws.ingbusiness.pl/ing-ccs/cdc00101?xsd=../xsd/itin.001.001.01.xsd" namespace="urn:ca:std:ccs:ing:tech:xsd:itin.001.001.01" />
+  <xs:element name="SignedDocument" type="SignedDocument" />
+  <xs:complexType name="SignedDocument">
+    <xs:sequence>
+      <xs:choice>
+        <xs:element ref="M20:Document" />
+        <xs:element ref="M23:Document" />
+        <xs:element ref="M24:Document" />
+      </xs:choice>
+      <xs:element minOccurs="0" ref="ds:Signature" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

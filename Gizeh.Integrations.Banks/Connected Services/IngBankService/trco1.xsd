@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="urn:ca:std:cdc:tech:xsd:trco.002.001.01" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="urn:ca:std:cdc:tech:xsd:trco.002.001.01" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Document" type="Document" />
+  <xs:complexType name="Document">
+    <xs:sequence>
+      <xs:element name="TrnConf" type="TransferConfirmation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TransferConfirmation">
+    <xs:sequence>
+      <xs:element name="MsgId" type="MessageIdentification" />
+      <xs:element name="TrnConfDtls" type="TransferConfirmationDetails" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MessageIdentification">
+    <xs:sequence>
+      <xs:element name="Id" type="Max35Text" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="Max35Text">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="35" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="TransferConfirmationDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Nm" type="Max70Text" />
+      <xs:element minOccurs="0" name="CreDt" type="ISODate" />
+      <xs:element minOccurs="0" name="Size" type="Max18NumericText" />
+      <xs:element minOccurs="0" name="File" type="File" />
+      <xs:element minOccurs="0" name="FileChecksum" type="Only32Text" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="Max70Text">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="70" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ISODate">
+    <xs:restriction base="xs:date" />
+  </xs:simpleType>
+  <xs:simpleType name="Max18NumericText">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[0-9]{1,18}" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="File">
+    <xs:restriction base="xs:base64Binary" />
+  </xs:simpleType>
+  <xs:simpleType name="Only32Text">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="32" />
+      <xs:maxLength value="32" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="urn:ca:std:cdc:tech:xsd:crds.004.001.01" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="urn:ca:std:cdc:tech:xsd:crds.004.001.01" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Document" type="Document" />
+  <xs:complexType name="Document">
+    <xs:sequence>
+      <xs:element name="CrdLmt" type="CardLimitsType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CardLimitsType">
+    <xs:sequence>
+      <xs:element name="GrpHdr" type="GrpHdrType" />
+      <xs:element name="Lmt" type="LmtType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GrpHdrType">
+    <xs:sequence>
+      <xs:element name="MsgId" type="Max35Text" />
+      <xs:element name="CreDtTm" type="ISODateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="Max35Text">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="35" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ISODateTime">
+    <xs:restriction base="xs:dateTime" />
+  </xs:simpleType>
+  <xs:complexType name="LimitType">
+    <xs:simpleContent>
+      <xs:extension base="xs:decimal">
+        <xs:attribute name="Ccy" type="CurrencyCode" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="CurrencyCode">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[A-Z]{3,3}" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="LmtType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MthPmtLmt" type="LimitType" />
+      <xs:element minOccurs="0" name="MthAvlbPmtLmt" type="LimitType" />
+      <xs:element minOccurs="0" name="MthCashLmt" type="LimitType" />
+      <xs:element minOccurs="0" name="MthAvlbCashLmt" type="LimitType" />
+      <xs:element minOccurs="0" name="DlyPmtLmt" type="LimitType" />
+      <xs:element minOccurs="0" name="DlyIntPmtLmt" type="LimitType" />
+      <xs:element minOccurs="0" name="DlyAbrPmtLmt" type="LimitType" />
+      <xs:element minOccurs="0" name="DlyAtmLmt" type="LimitType" />
+      <xs:element minOccurs="0" name="DlyAbrAtmLmt" type="LimitType" />
+      <xs:element minOccurs="0" name="DlyCashLmt" type="LimitType" />
+      <xs:element minOccurs="0" name="MthLmt" type="LimitType" />
+      <xs:element minOccurs="0" name="MthAvlbLmt" type="LimitType" />
+      <xs:element minOccurs="0" name="MthUsedLmt" type="LimitType" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

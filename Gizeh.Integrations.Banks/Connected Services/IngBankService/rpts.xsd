@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="urn:ca:std:ccs:ing:tech:xsd:rpts.012.001.01" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="urn:ca:std:ccs:ing:tech:xsd:rpts.012.001.01" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Document" type="Document" />
+  <xs:complexType name="Document">
+    <xs:sequence>
+      <xs:element name="DDRpt" type="BankToCustomerDDReport" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BankToCustomerDDReport">
+    <xs:sequence>
+      <xs:element name="MsgId" type="MessageIdentification" />
+      <xs:element maxOccurs="unbounded" name="Rpt" type="Report" />
+      <xs:element minOccurs="0" name="OrlErr" type="OperationalError" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MessageIdentification">
+    <xs:sequence>
+      <xs:element name="Id" type="Max35Text" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="Max35Text">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="35" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Max70Text">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="70" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="Report">
+    <xs:sequence>
+      <xs:element name="TrnTp" type="Const3CapitalText" />
+      <xs:element name="RptId" type="FileNumber" />
+      <xs:element name="Cdtr" type="CreditorNumber" />
+      <xs:element maxOccurs="unbounded" name="Ntry" type="Entry" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="Const3CapitalText">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[A-Z]{3,3}" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="FileNumber">
+    <xs:sequence>
+      <xs:element name="EQ" type="ISONumber" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="ISONumber">
+    <xs:restriction base="xs:integer" />
+  </xs:simpleType>
+  <xs:complexType name="CreditorNumber">
+    <xs:sequence>
+      <xs:element name="Id" type="Max15NumericText" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="Max15NumericText">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[0-9]{1,15}" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="Entry">
+    <xs:sequence>
+      <xs:element name="Cdtr" type="Creditor" />
+      <xs:element name="AdmCdtr" type="AdministrativeCreditor" />
+      <xs:element minOccurs="0" name="PmtCd" type="Const2NumericText" />
+      <xs:element name="Dbtr" type="Debtor" />
+      <xs:element name="PmtCrDt" type="ISODate" />
+      <xs:element name="PmtDt" type="ISODate" />
+      <xs:element minOccurs="0" name="PmtAckDt" type="ISODate" />
+      <xs:element name="PmtAmt" type="Max15PointConst2NumericText" />
+      <xs:element name="PmtId" type="Max20NumericText" />
+      <xs:element minOccurs="0" name="PmtDtls" type="UnlimitedText" />
+      <xs:element name="MemoFld" type="MemoField" />
+      <xs:element minOccurs="0" name="NbOfTrs" type="Const2NumericText" />
+      <xs:element minOccurs="0" name="TrnId" type="Const15NumericText" />
+      <xs:element minOccurs="0" name="Chrgs" type="Charges" />
+      <xs:element minOccurs="0" name="DFZErr" type="DFZError" />
+      <xs:element name="Rjct" type="Max2NumericText" />
+      <xs:element minOccurs="0" name="Cmpl" type="Complaint" />
+      <xs:element minOccurs="0" name="RefNo" type="ClientReferenceNumber" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Creditor">
+    <xs:sequence>
+      <xs:element name="Acct" type="Account" />
+      <xs:element minOccurs="0" name="NIP" type="Const10NumericText" />
+      <xs:element maxOccurs="2" name="Nm" type="Max35Text" />
+      <xs:element name="PstlAdr" type="Address" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Account">
+    <xs:sequence>
+      <xs:element name="Id" type="Max26NumericText" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="Max26NumericText">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[0-9]{1,26}" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Const10NumericText">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[0-9]{10,10}" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="Address">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="2" name="AdrLn" type="Max35Text" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AdministrativeCreditor">
+    <xs:sequence>
+      <xs:element name="Id" type="Max15NumericText" />
+      <xs:element name="Acct" type="Account" />
+      <xs:element maxOccurs="2" name="Nm" type="Max70Text" />
+      <xs:element name="PstlAdr" type="Address" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="Const2NumericText">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[0-9]{1,2}" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="Debtor">
+    <xs:sequence>
+      <xs:element name="Acct" type="Account" />
+      <xs:element maxOccurs="2" name="Nm" type="Max35Text" />
+      <xs:element name="PstlAdr" type="Address" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="ISODate">
+    <xs:restriction base="xs:date" />
+  </xs:simpleType>
+  <xs:simpleType name="Max15PointConst2NumericText">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[0-9]{1,15}([.][0-9]{2,2})?" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Max20NumericText">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="20" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="UnlimitedText">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:complexType name="MemoField">
+    <xs:sequence>
+      <xs:element maxOccurs="4" name="MemoFldLn" type="Max35Text" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="Const15NumericText">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[0-9]{1,15}" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="Charges">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Amt" type="Max15PointConst2NumericText" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DFZError">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Desc" type="Max40Text" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="Max40Text">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="40" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Max2NumericText">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[0-9]{1,2}" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="Complaint">
+    <xs:sequence>
+      <xs:element maxOccurs="4" name="CmplLn" type="Max35Text" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OperationalError">
+    <xs:sequence>
+      <xs:element name="Err" type="Error" />
+      <xs:element name="Desc" type="Max140Text" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Error">
+    <xs:sequence>
+      <xs:element name="Prtry" type="Const4CapitalNumericText" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="Const4CapitalNumericText">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[A-Z0-9]{4,4}" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Max140Text">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="140" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ClientReferenceNumber">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="34" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

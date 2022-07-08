@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="urn:ca:std:cdc:tech:xsd:gbab.001.001.01" elementFormDefault="qualified" targetNamespace="urn:ca:std:cdc:tech:xsd:gbab.001.001.01" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Document" type="Document" />
+  <xs:complexType name="Document">
+    <xs:sequence>
+      <xs:element name="GetBatchAccBal" type="GetBatchAccBalType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetBatchAccBalType">
+    <xs:sequence>
+      <xs:element name="MsgId" type="MessageIdentification" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AcctQryDef" type="AccountQueryType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MessageIdentification">
+    <xs:sequence>
+      <xs:element name="Id" type="Max35Text" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AccountQueryType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AcctCrit" type="AcctCritType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AcctCritType">
+    <xs:sequence>
+      <xs:choice>
+        <xs:element name="NewCrit" type="NewCritType" />
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="NewCritType">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="unbounded" name="SchCrit" type="CashAccountSearchCriteria4" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CashAccountSearchCriteria4">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="unbounded" name="AcctId" type="AcctIdType" />
+      <xs:element minOccurs="1" maxOccurs="unbounded" name="Bal" type="BalanceDetails4" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AcctIdType">
+    <xs:sequence>
+      <xs:choice>
+        <xs:element name="EQ" type="EQType" />
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EQType">
+    <xs:sequence>
+      <xs:choice>
+        <xs:element name="IBAN" type="IBANIdentifier" />
+        <xs:element name="BBAN" type="BBANIdentifier" />
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="IBANIdentifier">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[a-zA-Z]{2,2}[0-9]{2,2}[a-zA-Z0-9]{1,30}" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="BBANIdentifier">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[a-zA-Z0-9]{1,30}" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="BalanceDetails4">
+    <xs:sequence>
+      <xs:element name="CtrPtyTp" type="CtrPtyTpType" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BalTp" type="BalTpType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BalTpType">
+    <xs:sequence>
+      <xs:choice>
+        <xs:element name="Cd" type="CdType" />
+        <xs:element name="Prtry" type="Max35Text" />
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="CtrPtyTpType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="BILA" />
+      <xs:enumeration value="MULT" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Max35Text">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="35" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="CdType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="OPNG" />
+      <xs:enumeration value="INTM" />
+      <xs:enumeration value="CLSG" />
+      <xs:enumeration value="BOOK" />
+      <xs:enumeration value="CRRT" />
+      <xs:enumeration value="PDNG" />
+      <xs:enumeration value="LRLD" />
+      <xs:enumeration value="AVLB" />
+      <xs:enumeration value="LTSF" />
+      <xs:enumeration value="CRDT" />
+      <xs:enumeration value="EAST" />
+      <xs:enumeration value="PYMT" />
+      <xs:enumeration value="BLCK" />
+      <xs:enumeration value="XPCD" />
+      <xs:enumeration value="DLOD" />
+      <xs:enumeration value="XCRD" />
+      <xs:enumeration value="XDBT" />
+      <xs:enumeration value="ADJT" />
+      <xs:enumeration value="PRAV" />
+      <xs:enumeration value="DBIT" />
+      <xs:enumeration value="THRE" />
+      <xs:enumeration value="NOTE" />
+      <xs:enumeration value="SELF" />
+      <xs:enumeration value="MSTR" />
+      <xs:enumeration value="FSET" />
+      <xs:enumeration value="BLOC" />
+      <xs:enumeration value="OTHB" />
+      <xs:enumeration value="CUST" />
+      <xs:enumeration value="FORC" />
+      <xs:enumeration value="COLC" />
+      <xs:enumeration value="FUND" />
+      <xs:enumeration value="PIPO" />
+      <xs:enumeration value="XCHG" />
+      <xs:enumeration value="CCPS" />
+      <xs:enumeration value="TOHB" />
+      <xs:enumeration value="COHB" />
+      <xs:enumeration value="DOHB" />
+      <xs:enumeration value="TPBL" />
+      <xs:enumeration value="CPBL" />
+      <xs:enumeration value="DPBL" />
+      <xs:enumeration value="FUTB" />
+      <xs:enumeration value="REJB" />
+      <xs:enumeration value="FCOL" />
+      <xs:enumeration value="FCOU" />
+      <xs:enumeration value="SCOL" />
+      <xs:enumeration value="SCOU" />
+      <xs:enumeration value="CUSA" />
+      <xs:enumeration value="XCHC" />
+      <xs:enumeration value="XCHN" />
+      <xs:enumeration value="DSET" />
+      <xs:enumeration value="LACK" />
+      <xs:enumeration value="NSET" />
+      <xs:enumeration value="OTCC" />
+      <xs:enumeration value="OTCG" />
+      <xs:enumeration value="OTCN" />
+      <xs:enumeration value="SAPD" />
+      <xs:enumeration value="SAPC" />
+      <xs:enumeration value="REPD" />
+      <xs:enumeration value="REPC" />
+      <xs:enumeration value="BSCD" />
+      <xs:enumeration value="BSCC" />
+      <xs:enumeration value="SAPP" />
+      <xs:enumeration value="IRLT" />
+      <xs:enumeration value="IRDR" />
+      <xs:enumeration value="DWRD" />
+      <xs:enumeration value="ADWR" />
+      <xs:enumeration value="AIDR" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
